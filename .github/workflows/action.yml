@@ -27,7 +27,7 @@ jobs:
           # 部署到 gh 分支
           target_branch: gh
           # 部署目录为脚本的输出目录
-          build_dir: source_cn_1080
+          build_dir: cn_1080
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
