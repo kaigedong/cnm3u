@@ -1,0 +1,31 @@
+name: 'GitHub IPTV 1080 Bot'
+
+on:
+  push:
+    # push 到main分支时触发
+    branches: [main]
+  schedule:
+    # 每天触发一次
+    - cron: '0 21 * * *'
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 从仓库获取代码
+      - name: 'Checkout codes'
+        uses: actions/checkout@v1
+
+      # 执行更新代码
+      - name: 'Update cn m3u'
+        run: bash ./update_m3u.sh
+
+      - name: "Push branch"
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          # 部署到 gh 分支
+          target_branch: gh
+          # 部署目录为脚本的输出目录
+          build_dir: source_cn_1080
+
