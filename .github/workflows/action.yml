@@ -18,11 +18,11 @@ jobs:
         uses: actions/checkout@v1
 
       - name: "获取m3u列表"
-        uses: wget https://iptv-org.github.io/iptv/countries/cn.m3u 2>/dev/null -O cn.m3u
+        run: wget https://iptv-org.github.io/iptv/countries/cn.m3u 2>/dev/null -O cn.m3u
 
       # 执行更新代码
       - name: 'Update cn m3u'
-        run: python ./filter_m3u.py >./cn_1080/cn1080.m3u
+        run: python filter_m3u.py >cn_1080/cn1080.m3u
 
       - name: "Push branch"
         uses: crazy-max/ghaction-github-pages@v2
