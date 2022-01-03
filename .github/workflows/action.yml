@@ -19,7 +19,7 @@ jobs:
 
       # 执行更新代码
       - name: 'Update cn m3u'
-        run: bash ./update_m3u.sh
+        run: python ./filter_m3u.py >./cn_1080/cn1080.m3u
 
       - name: "Push branch"
         uses: crazy-max/ghaction-github-pages@v2
