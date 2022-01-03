@@ -19,6 +19,7 @@
 南陽
 南阳
 中牟
+SiTV
 France
 Kinder
 Jazeera
@@ -47,3 +48,6 @@ CCTV-老故事
 康巴卫视
 青海安多卫视
 tvg-language="English"
+美国
+半岛新闻
+红河综合台
