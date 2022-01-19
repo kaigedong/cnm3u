@@ -10,9 +10,7 @@
 
 - [x] 添加[IPTV Checker](https://github.com/freearhey/iptv-checker)进行筛选
 
-- [ ] 添加[Tvlist-awesome-m3u-m3u8](https://github.com/imDazui/Tvlist-awesome-m3u-m3u8)
-
-- [ ] ipv6 直播源
+- [x] 添加[Tvlist-awesome-m3u-m3u8](https://github.com/imDazui/Tvlist-awesome-m3u-m3u8)
 
 ```
 # m3u链接
