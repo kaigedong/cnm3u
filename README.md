@@ -8,6 +8,10 @@
 
 - [x] 列表顺序按照白名单顺序
 
+- [x] 添加[IPTV Checker](https://github.com/freearhey/iptv-checker)进行筛选
+
+- [ ] ipv6 直播源
+
 ```
 # m3u链接
 https://kaigedong.github.io/cnm3u/cn1080.m3u

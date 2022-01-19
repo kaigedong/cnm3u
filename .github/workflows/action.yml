@@ -17,14 +17,34 @@ jobs:
       - name: 'Checkout codes'
         uses: actions/checkout@v1
 
-      - name: "获取m3u列表"
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          # 选择要使用的 node 版本
+          node-version: '14.18.3'
+
+      - name: 安装ffmpeg
+        uses: FedericoCarboni/setup-ffmpeg@v1
+
+      - name: '安装IPTV filter'
+        run: npm install -g iptv-checker
+
+      - name: '获取m3u列表'
         run: wget https://iptv-org.github.io/iptv/countries/cn.m3u 2>/dev/null -O cn.m3u
 
       # 执行更新代码
       - name: 'Update cn m3u'
-        run: python filter_m3u.py >cn_1080/cn1080.m3u
+        run: echo "#EXTM3U" > cn1080.m3u && python filter_m3u.py >> cn1080.m3u
 
-      - name: "Push branch"
+      # TODO: 用更好的方式获取iptv-checker path
+      # 执行检查
+      - name: 'IPTV检查'
+        run: /opt/hostedtoolcache/node/14.18.3/x64/bin/iptv-checker cn1080.m3u -o cn_1080
+
+      - name: '移动iptv-checker检查结果'
+        run: mv cn_1080/online.m3u cn_1080/cn1080.m3u
+
+      - name: 'Push branch'
         uses: crazy-max/ghaction-github-pages@v2
         with:
           # 部署到 gh 分支
@@ -34,4 +54,3 @@ jobs:
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
