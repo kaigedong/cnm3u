@@ -1,6 +1,6 @@
 # 使用说明:
 
-每天自动获取上游仓库[iptv-org/iptv](https://github.com/iptv-org/iptv)的[中国源 https://iptv-org.github.io/iptv/countries/cn.m3u]，并按下面规则生成自己的 m3u 列表:
+每天自动获取上游仓库[iptv-org/iptv](https://github.com/iptv-org/iptv)的中国源 (https://iptv-org.github.io/iptv/countries/cn.m3u)，并按下面规则生成自己的 m3u 列表:
 
 ```
 # m3u链接
@@ -23,7 +23,7 @@ https://kaigedong.github.io/cnm3u/cn1080.m3u
 
 - [x] 添加[IPTV Checker](https://github.com/freearhey/iptv-checker)进行筛选
 
-## 生成自己的列表
+## 如何生成自己的个性化列表
 
 - [ ] Fork 本仓库 并 到仓库的 settings/pages 设置 Source 为 gh 分支
 
