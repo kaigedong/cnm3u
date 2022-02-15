@@ -1,11 +1,13 @@
 # 使用说明:
 
-每天自动获取上游仓库[iptv-org/iptv](https://github.com/iptv-org/iptv)的中国源 (https://iptv-org.github.io/iptv/countries/cn.m3u)，并按下面规则生成自己的 m3u 列表:
+每天自动获取上游仓库[iptv-org/iptv](https://github.com/iptv-org/iptv)的中国源，并生成自己的 m3u 列表:
 
 ```
 # m3u链接
 https://kaigedong.github.io/cnm3u/cn1080.m3u
 ```
+
+## 生成规则：
 
 - 首先删除掉黑名单[blacklist.txt](./blacklist.txt)
 
