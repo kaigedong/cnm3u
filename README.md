@@ -17,6 +17,10 @@ https://kaigedong.github.io/cnm3u/cn1080.m3u
 
 - 自动提交到[gh](https://github.com/kaigedong/cnm3u/tree/gh)分支，并使用 GithubPage 进行托管
 
+## TODO:
+
+- [ ] 处理上游源更新导致的重复频道问题
+
 ## 特点：
 
 - [x] 每天定时根据最新上游源进行更新
