@@ -6,7 +6,7 @@ on:
     branches: [main]
   schedule:
     # 每天触发一次
-    - cron: '0 21 * * *'
+    - cron: '0 3 * * *'
 
 jobs:
   bot:
