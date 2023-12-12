@@ -26,29 +26,19 @@ jobs:
       - name: 安装ffmpeg
         uses: FedericoCarboni/setup-ffmpeg@v1
 
-      - name: '安装IPTV filter'
-        run: npm install -g iptv-checker
+      - name: 根据规则生成电视节目列表
+        run: |
+          npm install -g iptv-checker # 安装IPTV filter
+          wget https://iptv-org.github.io/iptv/countries/cn.m3u 2>/dev/null -O cn.m3u.tmp
+          ./cnm3uParser > cn.m3u
 
-      - name: '获取m3u列表'
-        run: wget https://iptv-org.github.io/iptv/countries/cn.m3u 2>/dev/null -O cn.m3u
-
-      # 执行更新代码
-      - name: 'Update cn m3u'
-        run: echo "#EXTM3U" > cn1080.m3u
-
-      # - name: '从custom_list中添加'
-      #   run: cat custom_list/50fps_4k.m3u custom_list/aqiyi_4k.m3u >> cn1080.m3u
-
-      - name: '按黑白名单过滤'
-        run: python filter_m3u.py >> cn1080.m3u
-
-      # TODO: 用更好的方式获取iptv-checker path
-      # 执行检查
-      - name: 'IPTV检查'
-        run: /opt/hostedtoolcache/node/14.18.3/x64/bin/iptv-checker cn1080.m3u -o cn_1080
-
-      - name: '移动iptv-checker检查结果'
-        run: mv cn_1080/online.m3u cn_1080/cn1080.m3u
+          #'从custom_list中添加'
+          #cat custom_list/50fps_4k.m3u custom_list/aqiyi_4k.m3u >> cn1080.m3u
+          echo "#EXTM3U" > cn1080.m3u
+          python filter_m3u.py >> cn1080.m3u # 按黑白名单过滤
+          # IPTV检查, TODO: 用更好的方式获取iptv-checker path
+          /opt/hostedtoolcache/node/14.18.3/x64/bin/iptv-checker cn1080.m3u -o cn_1080
+          mv cn_1080/online.m3u cn_1080/cn1080.m3u
 
       - name: 'Push branch'
         uses: crazy-max/ghaction-github-pages@v2
