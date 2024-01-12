@@ -30,7 +30,9 @@ jobs:
         run: |
           # npm install -g iptv-checker # 安装IPTV filter
           wget https://iptv-org.github.io/iptv/countries/cn.m3u 2>/dev/null -O cn.m3u.tmp
-          mkdir cn_1080
+          if [ ! -d "cn_1080" ]; then
+              mkdir cn_1080
+          fi
           echo "#EXTM3U" > cn_1080/cn1080.m3u
           ./cnm3uParser >> cn_1080/cn1080.m3u
 
