@@ -28,18 +28,19 @@ jobs:
 
       - name: 根据规则生成电视节目列表
         run: |
-          npm install -g iptv-checker # 安装IPTV filter
+          # npm install -g iptv-checker # 安装IPTV filter
           wget https://iptv-org.github.io/iptv/countries/cn.m3u 2>/dev/null -O cn.m3u.tmp
-          echo "#EXTM3U" > cn1080.m3u
-          ./cnm3uParser >> cn1080.m3u
+          mkdir cn_1080
+          echo "#EXTM3U" > cn_1080/cn1080.m3u
+          ./cnm3uParser >> cn_1080/cn1080.m3u
 
           #'从custom_list中添加'
           #cat custom_list/50fps_4k.m3u custom_list/aqiyi_4k.m3u >> cn1080.m3u
           # echo "#EXTM3U" > cn1080.m3u
           # python filter_m3u.py >> cn1080.m3u # 按黑白名单过滤
           # IPTV检查, TODO: 用更好的方式获取iptv-checker path
-          /opt/hostedtoolcache/node/14.18.3/x64/bin/iptv-checker cn1080.m3u -o cn_1080
-          mv cn_1080/online.m3u cn_1080/cn1080.m3u
+          # /opt/hostedtoolcache/node/14.18.3/x64/bin/iptv-checker cn1080.m3u -o cn_1080
+          # mv cn_1080/online.m3u cn_1080/cn1080.m3u
 
       - name: 'Push branch'
         uses: crazy-max/ghaction-github-pages@v2
