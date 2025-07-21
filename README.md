@@ -14,3 +14,5 @@
 
 +  ✯ 一个可直连访问的电视/广播图标库与相关工具项目 ✯ 🔕 永久免费 直连访问 完整开源 不断完善的台标 支持IPv4/IPv6双栈访问 🔕 
 https://github.com/fanmingming/live [![GitHub last commit](https://img.shields.io/github/last-commit/fanmingming/live.svg)](https://github.com/fanmingming/live) [![GitHub stars](https://img.shields.io/github/stars/fanmingming/live.svg?style=social)](https://github.com/fanmingming/live)
+
++ 上海移动直播源 [![GitHub last commit](https://img.shields.io/github/last-commit/jiangyiqi99/IPTV_SHCMCC.svg)](https://github.com/jiangyiqi99/IPTV_SHCMCC) [![GitHub stars](https://img.shields.io/github/stars/jiangyiqi99/IPTV_SHCMCC.svg?style=social)](https://github.com/jiangyiqi99/IPTV_SHCMCC)
